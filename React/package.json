@@ -3,5 +3,8 @@
     "@tailwindcss/vite": "^4.1.11",
     "sweetalert2": "^11.22.2",
     "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
