@@ -1,41 +1,24 @@
-import React from 'react';
-import BotonPrimario from './BotonPrimario';
-import Swal from 'sweetalert2';
+import React from "react";
+import { Link } from "react-router-dom"; // Importa Link
 
-const TarjetaProducto = ({ nombre, precio, imagenUrl }) => {
-  const manejadorAgregarCarrito = () => {
-    Swal.fire({
-      title: '¡Buen trabajo!',
-      text: `Añadiendo "${nombre}" al carrito por $${precio}`,
-      icon: 'success',
-      showCloseButton: false,
-      timer: 3000,
-      timerProgressBar: true
-    });
-  };
-
-  const manejadorVerDetalles = () => {
-    Swal.fire({
-      title: '¡Buen trabajo!',
-      text: `Viendo detalles de "${nombre}"`,
-      icon: 'success',
-      showCloseButton: false,
-      timer: 3000,
-      timerProgressBar: true
-    });
-  };
-
+const Navegacion = () => {
   return (
-    <div className="bg-white rounded-lg shadow-xl p-6 m-4 w-72 flex flex-col items-center justify-between">
-      <img src={imagenUrl} alt={nombre} className="w-48 h-48 object-cover rounded-md mb-4" />
-      <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">{nombre}</h3>
-      <p className="text-2xl font-bold text-blue-600 mb-4">${precio}</p>
-      <div className="flex space-x-2 mt-auto">
-        <BotonPrimario texto="Añadir al Carrito" onClick={manejadorAgregarCarrito} />
-        <BotonPrimario texto="Ver Detalles" onClick={manejadorVerDetalles} />
+    <nav className="bg-blue-800 p-4 shadow-md w-full">
+      <div className="container mx-auto flex items-center justify-between">
+        <Link to="/" className="text-white text-2xl font-bold hover:text-blue-200 transition duration-300">
+          Mi tienda online
+        </Link>
       </div>
-    </div>
-  );
-};
 
-export default TarjetaProducto;
+      <div className="flex space-x-6">
+        <Link to="/" className="text-white hover:text-blue-200 text-lg transition duration-300">Inicio</Link>
+        <Link to="/usuarios" className="text-white hover:text-blue-200 text-lg transition duration-300">Usuarios</Link>
+        <Link to="/productos" className="text-white hover:text-blue-200 text-lg transition duration-300">Productos</Link>
+        <Link to="/ofertas" className="text-white hover:text-blue-200 text-lg transition duration-300">Ofertas</Link>
+        <Link to="/contacto" className="text-white hover:text-blue-200 text-lg transition duration-300">Contacto</Link>
+      </div>
+    </nav>
+  );
+}
+
+export default Navegacion;
