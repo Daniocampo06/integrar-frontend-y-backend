@@ -2,7 +2,7 @@
   "name": "tailwind",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://daniocampo06.github.io/Integrar-Frontend-y-Backend-Guillo",
+  "homepage": "https://daniocampo06.github.io/integrar-frontend-y-backend",
   "type": "module",
   "scripts": {
     "dev": "vite",
